@@ -31,15 +31,15 @@ console.log(emailLuis)
 let a = 5;
 let b = 3;
 
-const arrayToDestructure = [];
-arrayToDestructure.push(a);
-arrayToDestructure.push(b);
+const arrayToDestructure = [a, b];
 
 [b, a] = arrayToDestructure;
 
 // // Al final
 // let a = 3;
 // let b = 5;
+// console.log(a)
+// console.log(b)
 
 
 
