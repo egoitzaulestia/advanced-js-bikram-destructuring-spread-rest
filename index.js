@@ -31,7 +31,11 @@ console.log(emailLuis)
 let a = 5;
 let b = 3;
 
-[b, a] = [a, b]
+const arrayToDestructure = [];
+arrayToDestructure.push(a);
+arrayToDestructure.push(b);
+
+[b, a] = arrayToDestructure;
 
 // // Al final
 // let a = 3;
@@ -56,8 +60,9 @@ const HIGH_TEMPERATURES = {
 // const maximaManana = HIGH_TEMPERATURES.tomorrow;
 // console.log(maximaHoy);
 // console.log(maximaManana);
-
 // ```
+
+const { today: maximaHoy, tomorrow: maximaManana } = HIGH_TEMPERATURES;
 
 
 
@@ -134,24 +139,23 @@ const combineTwoArrays = (array1, array2) => {
 // Ejercicio 9:
 // Escriba una función llamada onlyUniques que acepte cualquier número de argumentos 
 // y devuelva un array de elementos únicos, sin repetidos.
-// ```
-// onlyUniques("gato", "pollo", "cerdo", "cerdo"); //["gato", "pollo", "cerdo"]
-// onlyUniques(1, 1, 2, 2, 3, 6, 7, 8); //[1, 2, 3, 6, 7, 8]
-// ```
 
 const onlyUniques = (...args) => {
-    const duplicates = [];
+    const uniques = [];
 
     for (let i = 0; i < args.length; i++) {
         for (let j = 0 + 1; j < args.length; j++){
-            if (args[i] === args[j] && (!duplicates.includes(args[i]))){
-                duplicates.push(args[i]);
+            if (args[i] !== args[j] && (!uniques.includes(args[i]))){
+                uniques.push(args[i]);
             }
         }
     }
 
-    return duplicates;
+    return uniques;
 }
+
+// console.log(onlyUniques("gato", "pollo", "cerdo", "cerdo"));
+// console.log(onlyUniques(1, 1, 2, 2, 3, 6, 7, 8));
 
 
 
